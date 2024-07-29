@@ -1,6 +1,9 @@
 from DeepSlice import DSModel
 
-species = 'mouse'  #available species are 'mouse' and 'rat'
+#available species are 'mouse' and 'rat'
+# species = 'mouse'
+species = 'rat'
+
 Model = DSModel(species)
 folderpath = '/home/def-pascalt-ab/analysis/20240612_test_deepslice/'
 # here you run the model on your folder
@@ -17,4 +20,4 @@ Model.enforce_index_order()
 Model.enforce_index_spacing(section_thickness=None)
 # now we save which will produce a json file which can be placed in the same directory as your images and then opened
 # with QuickNII.
-Model.save_predictions(folderpath + 'MyResults')
+Model.save_predictions(folderpath + 'MyResults.rat')
