@@ -23,7 +23,7 @@ def launch_deepslice(species, images_path, outfile):
     # with QuickNII.
     Model.save_predictions(images_path + outfile)
 
-    print(f"{outfile} was saved in {images_path} and can be opened next in QuickNII tool. ")
+    print(f"{outfile} was saved in {images_path} and can be passed to VisuAlign tool for .flat files generation. ")
 
 if __name__ == '__main__':
     argParser = argparse.ArgumentParser()
