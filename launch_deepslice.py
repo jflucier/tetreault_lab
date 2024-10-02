@@ -2,7 +2,7 @@
 import argparse
 from DeepSlice import DSModel
 
-def launch_deepslice(species, images_path, outfile):
+def launch_deepslice(species, images_path, outfile, ensemble, section):
     #available species are 'mouse' and 'rat'
 
     Model = DSModel(species)
@@ -10,7 +10,7 @@ def launch_deepslice(species, images_path, outfile):
     # here you run the model on your folder
     # try with and without ensemble to find the model which best works for you
     # if you have section numbers included in the filename as _sXXX specify this :)
-    Model.predict(images_path, ensemble=True, section_numbers=True)
+    Model.predict(images_path, ensemble=ensemble, section_numbers=section)
     # If you would like to normalise the angles (you should)
     Model.propagate_angles()
     # To reorder your sections according to the section numbers
@@ -50,10 +50,30 @@ if __name__ == '__main__':
         required=True
     )
 
+    argParser.add_argument(
+        "-e",
+        "--ensemble",
+        help="ensemble predict parameter",
+        required=True,
+        default=True,
+        type=bool
+    )
+
+    argParser.add_argument(
+        "-x",
+        "--section",
+        help="section predict parameter",
+        required=True,
+        default=True,
+        type=bool
+    )
+
     args = argParser.parse_args()
 
     launch_deepslice(
         args.specie,
         args.images_path,
-        args.output_file
+        args.output_file,
+        args.ensemble,
+        args.section,
     )
