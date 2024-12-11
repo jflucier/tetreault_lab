@@ -82,21 +82,25 @@ do
 #  COUNTER=$((COUNTER+1))
 done
 
+echo "running deepslice using parameters --ensemble 1 --section 1"
 python /home/def-pascalt-ab/programs/tetreault_lab/launch_deepslice.py \
 -s rat --ensemble 1 --section 1 \
 -i ${out_path}/ \
 -o ensembleT_validsectionT.rat
 
+echo "running deepslice using parameters --ensemble 1 --section 0"
 python /home/def-pascalt-ab/programs/tetreault_lab/launch_deepslice.py \
 -s rat --ensemble 1 --section 0 \
 -i ${out_path}/ \
 -o ensembleT_validsectionF.rat
 
+echo "running deepslice using parameters --ensemble 0 --section 1"
 python /home/def-pascalt-ab/programs/tetreault_lab/launch_deepslice.py \
 -s rat --ensemble 0 --section 1 \
 -i ${out_path}/ \
 -o ensembleF_validsectionT.rat
 
+echo "running deepslice using parameters --ensemble 0 --section 0"
 python /home/def-pascalt-ab/programs/tetreault_lab/launch_deepslice.py \
 -s rat --ensemble 0 --section 0 \
 -i ${out_path}/ \
