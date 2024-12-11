@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -eEx
+set -e
 
 help_message () {
 	echo ""
