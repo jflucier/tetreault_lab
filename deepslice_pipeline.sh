@@ -57,6 +57,8 @@ else
     echo "## Output path: ${out_path}"
 fi
 
+source /home/def-pascalt-ab/programs/deepslice_env/bin/activate
+
 for f in ${in_path}/*.tiff
 do
   b=$(basename $f)
