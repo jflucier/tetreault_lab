@@ -68,11 +68,11 @@ if __name__ == '__main__':
 
     # ensemble = False
     if args.ensemble is None:
-        ensemble = False
+        args.ensemble = False
     #
     # section = False
     if args.section is None:
-        section = False
+        args.section = False
 
     print(f"Using ensemble={ensemble} section={section}")
 
