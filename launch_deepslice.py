@@ -16,10 +16,10 @@ def launch_deepslice(species, images_path, outfile, ensemble, section):
     # To reorder your sections according to the section numbers
     if section:
         Model.enforce_index_order()
-    # alternatively if you know the precise spacing (ie; 1, 2, 4, indicates that section 3 has been left out of the
-    # series) Then you can use Furthermore if you know the exact section thickness in microns this can be included
-    # instead of None if your sections are numbered rostral to caudal you will need to specify a negative section_thickness
-    Model.enforce_index_spacing(section_thickness=None)
+        # alternatively if you know the precise spacing (ie; 1, 2, 4, indicates that section 3 has been left out of the
+        # series) Then you can use Furthermore if you know the exact section thickness in microns this can be included
+        # instead of None if your sections are numbered rostral to caudal you will need to specify a negative section_thickness
+        Model.enforce_index_spacing(section_thickness=None)
     # now we save which will produce a json file which can be placed in the same directory as your images and then opened
     # with QuickNII.
     Model.save_predictions(images_path + outfile)
