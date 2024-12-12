@@ -54,7 +54,6 @@ if __name__ == '__main__':
         "-e",
         "--ensemble",
         help="ensemble predict parameter",
-        required=True,
         default=True,
         type=bool
     )
@@ -63,19 +62,26 @@ if __name__ == '__main__':
         "-x",
         "--section",
         help="section predict parameter",
-        required=True,
         default=True,
         type=bool
     )
 
     args = argParser.parse_args()
 
-    print(f"ensemble={args.ensemble} section={args.section}")
+    ensemble = False
+    if args.ensemble:
+        ensemble = True
 
-    launch_deepslice(
-        args.specie,
-        args.images_path,
-        args.output_file,
-        args.ensemble,
-        args.section,
-    )
+    section = False
+    if args.section:
+        section = True
+
+    print(f"Using ensemble={args.ensemble} section={args.section}")
+
+    # launch_deepslice(
+    #     args.specie,
+    #     args.images_path,
+    #     args.output_file,
+    #     args.ensemble,
+    #     args.section,
+    # )
