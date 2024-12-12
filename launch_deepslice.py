@@ -74,7 +74,7 @@ if __name__ == '__main__':
     if args.section is None:
         args.section = False
 
-    print(f"Using ensemble={ensemble} section={section}")
+    print(f"Using ensemble={args.ensemble} section={args.section}")
 
     # launch_deepslice(
     #     args.specie,
