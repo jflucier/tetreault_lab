@@ -67,7 +67,7 @@ do
   new_f=$(perl -e '
   my $n="'$b'";
   my($slide_id,$dye,$ext) = split(/\./,$n);
-  my $s = sprintf("%04d",$slide_id);
+  my $s = sprintf("%03d",$slide_id);
   print "$s.$dye.$ext\n";
   ')
 
