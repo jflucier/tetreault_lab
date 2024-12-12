@@ -54,27 +54,25 @@ if __name__ == '__main__':
         "-e",
         "--ensemble",
         help="ensemble predict parameter",
-        default=True,
-        type=bool
+        action=argparse.BooleanOptionalAction
     )
 
     argParser.add_argument(
         "-x",
         "--section",
         help="section predict parameter",
-        default=True,
-        type=bool
+        action=argparse.BooleanOptionalAction
     )
 
     args = argParser.parse_args()
 
-    ensemble = False
-    if args.ensemble:
-        ensemble = True
-
-    section = False
-    if args.section:
-        section = True
+    # ensemble = False
+    # if args.ensemble:
+    #     ensemble = True
+    #
+    # section = False
+    # if args.section:
+    #     section = True
 
     print(f"Using ensemble={args.ensemble} section={args.section}")
 
