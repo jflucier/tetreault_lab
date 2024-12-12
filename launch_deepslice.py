@@ -76,10 +76,10 @@ if __name__ == '__main__':
 
     print(f"Using ensemble={args.ensemble} section={args.section}")
 
-    # launch_deepslice(
-    #     args.specie,
-    #     args.images_path,
-    #     args.output_file,
-    #     args.ensemble,
-    #     args.section,
-    # )
+    launch_deepslice(
+        args.specie,
+        args.images_path,
+        args.output_file,
+        args.ensemble,
+        args.section,
+    )
