@@ -14,7 +14,8 @@ def launch_deepslice(species, images_path, outfile, ensemble, section):
     # If you would like to normalise the angles (you should)
     Model.propagate_angles()
     # To reorder your sections according to the section numbers
-    Model.enforce_index_order()
+    if section:
+        Model.enforce_index_order()
     # alternatively if you know the precise spacing (ie; 1, 2, 4, indicates that section 3 has been left out of the
     # series) Then you can use Furthermore if you know the exact section thickness in microns this can be included
     # instead of None if your sections are numbered rostral to caudal you will need to specify a negative section_thickness
