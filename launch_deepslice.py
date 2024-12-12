@@ -67,14 +67,14 @@ if __name__ == '__main__':
     args = argParser.parse_args()
 
     # ensemble = False
-    # if args.ensemble:
-    #     ensemble = True
+    if args.ensemble is None:
+        ensemble = False
     #
     # section = False
-    # if args.section:
-    #     section = True
+    if args.section is None:
+        section = False
 
-    print(f"Using ensemble={args.ensemble} section={args.section}")
+    print(f"Using ensemble={ensemble} section={section}")
 
     # launch_deepslice(
     #     args.specie,
