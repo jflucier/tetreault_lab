@@ -59,26 +59,35 @@ fi
 
 source /home/def-pascalt-ab/programs/deepslice_env/bin/activate
 
+# rename file 3 digit to start
 for f in ${in_path}/*.tiff
 do
   b=$(basename $f)
   name=${b%.tiff}
-  new=$(perl -e '
-  my $n="'$name'";
-  my @t = split(/\./,$n);
-  my $new = $t[0] . "_" . $t[1];
-  print $new;
-  ')
-  slice_id=$(perl -e '
-  my $n="'$name'";
-  my @t = split(/\./,$n);
-  my $new = $t[0];
-  print $new;
+  new_f=$(perl -e '
+  my $n="'$b'";
+  my($slide_id,$dye,$ext) = split(/\./,$n);
+  my $s = sprintf("%04d",$slide_id);
+  print "$s.$dye.$ext\n";
   ')
 
-  slice_lbl=$(printf "%03d" $slice_id)
-  echo "converting ${f} to ${out_path}/${new}_s${slice_lbl}.png"
-  convert $f ${out_path}/${new}_s${slice_lbl}.png
+  echo "renaming $b to ${new_f}"
+  cp $f ${out_path}/${new_f}
+done
+
+
+for f in ${out_path}/*.tiff
+do
+  b=$(basename $f)
+  name=${b%.tiff}
+  new_f=$(perl -e '
+  my $n="'$b'";
+  my($slide_id,$dye,$ext) = split(/\./,$n);
+  print $slide_id . "_" . $dye . "_s" . $slide_id . ".png\n";
+  ')
+
+  echo "converting ${f} to ${out_path}/${new_f}"
+  convert $f ${out_path}/${new_f}
 #  COUNTER=$((COUNTER+1))
 done
 
