@@ -77,7 +77,7 @@ do
   ')
 
   slice_lbl=$(printf "%03d" $slice_id)
-  echo "converting ${f} to png3/DAPI_CNPase/${new}_s${slice_lbl}.png"
+  echo "converting ${f} to ${out_path}/${new}_s${slice_lbl}.png"
   convert $f ${out_path}/${new}_s${slice_lbl}.png
 #  COUNTER=$((COUNTER+1))
 done
