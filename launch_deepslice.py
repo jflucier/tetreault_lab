@@ -70,6 +70,8 @@ if __name__ == '__main__':
 
     args = argParser.parse_args()
 
+    print(f"ensemble={args.ensemble} section={args.section}")
+
     launch_deepslice(
         args.specie,
         args.images_path,
