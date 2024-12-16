@@ -97,11 +97,11 @@ python /home/def-pascalt-ab/programs/tetreault_lab/launch_deepslice.py \
 -i ${out_path}/ \
 -o ensembleT_validsectionT.rat
 
-echo "running deepslice using parameters --ensemble 1 --section 0"
-python /home/def-pascalt-ab/programs/tetreault_lab/launch_deepslice.py \
--s rat --ensemble \
--i ${out_path}/ \
--o ensembleT_validsectionF.rat
+#echo "running deepslice using parameters --ensemble 1 --section 0"
+#python /home/def-pascalt-ab/programs/tetreault_lab/launch_deepslice.py \
+#-s rat --ensemble \
+#-i ${out_path}/ \
+#-o ensembleT_validsectionF.rat
 
 echo "running deepslice using parameters --ensemble 0 --section 1"
 python /home/def-pascalt-ab/programs/tetreault_lab/launch_deepslice.py \
@@ -109,8 +109,8 @@ python /home/def-pascalt-ab/programs/tetreault_lab/launch_deepslice.py \
 -i ${out_path}/ \
 -o ensembleF_validsectionT.rat
 
-echo "running deepslice using parameters --ensemble 0 --section 0"
-python /home/def-pascalt-ab/programs/tetreault_lab/launch_deepslice.py \
--s rat \
--i ${out_path}/ \
--o ensembleF_validsectionF.rat
+#echo "running deepslice using parameters --ensemble 0 --section 0"
+#python /home/def-pascalt-ab/programs/tetreault_lab/launch_deepslice.py \
+#-s rat \
+#-i ${out_path}/ \
+#-o ensembleF_validsectionF.rat
