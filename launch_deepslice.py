@@ -12,7 +12,7 @@ def launch_deepslice(species, images_path, outfile, ensemble, section):
     # if you have section numbers included in the filename as _sXXX specify this :)
     Model.predict(images_path, ensemble=ensemble, section_numbers=section)
     # If you would like to normalise the angles (you should)
-    Model.propagate_angles()
+    #Model.propagate_angles()
     # To reorder your sections according to the section numbers
     if section:
         Model.enforce_index_order()
